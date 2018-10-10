@@ -33,9 +33,15 @@
         <button class="btn btn-secondary btn-sm" id="download-button">
           <span class="glyphicon glyphicon-remove-circle"></span> Download
         </button>
-        <button class="btn btn-secondary btn-sm" id="examples-button">
-          <span class="glyphicon glyphicon-remove-circle"></span> Examples
-        </button>
+        <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Examples
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" href="#">Dropdown link</a>
+      <a class="dropdown-item" href="#">Dropdown link</a>
+    </div>
+  </div>
       </div>  
     </div>
   </div>
