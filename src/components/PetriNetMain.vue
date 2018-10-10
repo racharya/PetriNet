@@ -3,11 +3,17 @@
     <div class="container-fluid">
     <h1>Petri Net</h1>
     <div class="btn-group navbar-btn">
-        <button class="btn btn-secondary btn-sm" id="place-button">
+        <button class="btn btn-secondary btn-sm" id="place-button" v-on:click=addPlace()>
           <span class="glyphicon glyphicon-plus"></span> Place
         </button>
         <button class="btn btn-secondary btn-sm" id="transition-button">
           <span class="glyphicon glyphicon-plus"></span> Transition
+        </button>
+        <button class="btn btn-secondary btn-sm" id="transition-button">
+          <span class="glyphicon glyphicon-plus"></span> + Tokens
+        </button>
+        <button class="btn btn-secondary btn-sm" id="transition-button">
+          <span class="glyphicon glyphicon-plus"></span> - Tokens
         </button>
         <button class="btn btn-secondary btn-sm" id="remove-button">
           <span class="glyphicon glyphicon-remove"></span> Remove
@@ -38,12 +44,15 @@
       Examples
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a class="dropdown-item" href="#">Dropdown link</a>
-      <a class="dropdown-item" href="#">Dropdown link</a>
+      <a class="dropdown-item" href="#">Vending Machine</a>
+      <a class="dropdown-item" href="#">Philoshoper Dinner</a>
     </div>
   </div>
       </div>  
     </div>
+        <canvas id="myCanvas" width="100%" height="100"
+style="border:1px solid red;">
+</canvas>
   </div>
 
 </template>
@@ -53,6 +62,11 @@ export default {
   name: 'PetriNetMain',
   props: {
     msg: String
+  },
+  methods: {
+      addPlace() {
+        
+      }
   }
 }
 </script>
@@ -62,12 +76,12 @@ export default {
 .container-fluid {
   display: block;
 }
+
 .btn-primary {
     border: 1px solid black;
 }
 #run-button, #stop-button {
   background-color: red;
-
 }
 h3 {
   margin: 40px 0 0;
