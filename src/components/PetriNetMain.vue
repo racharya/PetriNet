@@ -27,6 +27,9 @@
         <button class="btn btn-secondary btn-sm" id="stop-button">
           <span class="glyphicon glyphicon-remove-circle"></span> Stop
         </button>
+        <button class="btn btn-secondary btn-sm" id="new-button">
+          <span class="glyphicon glyphicon-remove-circle"></span> New
+        </button>
         <button class="btn btn-secondary btn-sm" id="save-button">
           <span class="glyphicon glyphicon-remove-circle"></span> Save
         </button>
@@ -39,7 +42,7 @@
         <button class="btn btn-secondary btn-sm" id="download-button">
           <span class="glyphicon glyphicon-remove-circle"></span> Download
         </button>
-        <div class="btn-group" role="group">
+  <div class="btn-group" role="group">
     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Examples
     </button>
@@ -47,28 +50,42 @@
       <a class="dropdown-item" href="#">Vending Machine</a>
       <a class="dropdown-item" href="#">Philoshoper Dinner</a>
     </div>
-  </div>
-      </div>  
-    </div>
-        <canvas id="myCanvas" width="100%" height="100"
-style="border:1px solid red;">
-</canvas>
+
+
+
   </div>
 
+  </div>
+
+    </div>
+<svg height="100%" width="100%">
+    <circle v-if="addPlaceButtonClicked" cx="50" cy="50" r="40" stroke="orange" stroke-width="3" fill="blue"></circle>
+  </svg>
+<p v-if="addPlaceButtonClicked">Add Circle{{numberOfClicks}}</p>
+
+
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'PetriNetMain',
+  name: "PetriNetMain",
   props: {
-    msg: String
+    msg: String,
+  },
+  data() {
+    return {
+    numberOfClicks: 0,
+    addPlaceButtonClicked: false,
+    }
   },
   methods: {
-      addPlace() {
-        
-      }
+    addPlace() {
+      this.addPlaceButtonClicked = true;
+      this.numberOfClicks++;
+    }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -78,9 +95,10 @@ export default {
 }
 
 .btn-primary {
-    border: 1px solid black;
+  border: 1px solid black;
 }
-#run-button, #stop-button {
+#run-button,
+#stop-button {
   background-color: red;
 }
 h3 {
