@@ -56,9 +56,11 @@
   </div>
   </div>
 </div>
-  <svg class='container-fluid'>  
+  <svg class='container-fluid'>
+    <g v-for="n in numberOfClicks">   
     <circle v-if="addPlaceBtnClicked" cx="50" cy="50" r="40" stroke="orange" stroke-width="5" fill="blue"></circle>
     <text v-if="addPlaceBtnClicked" x="50" y="100" stroke="#0000" stroke-width="2px" dy=".3em">P{{numberOfClicks}}</text>
+    </g>
   </svg>
 </div>
 </template>
@@ -72,7 +74,7 @@ export default {
   data() {
     return {
       numberOfClicks: 0,
-      addPlaceBtnClicked: false
+      addPlaceBtnClicked: false,
     };
   },
   methods: {
