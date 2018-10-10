@@ -47,41 +47,37 @@
       Examples
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" href="#">Water</a>
       <a class="dropdown-item" href="#">Vending Machine</a>
-      <a class="dropdown-item" href="#">Philoshoper Dinner</a>
+      <a class="dropdown-item" href="#">Dining Philosophers</a>
+      <a class="dropdown-item" href="#">Communication Protocol</a>
+      <a class="dropdown-item" href="#">Readers-Writers</a>
     </div>
-
-
-
   </div>
-
   </div>
-
-    </div>
-<svg height="100%" width="100%">
-    <circle v-if="addPlaceButtonClicked" cx="50" cy="50" r="40" stroke="orange" stroke-width="3" fill="blue"></circle>
+</div>
+  <svg class='container-fluid'>  
+    <circle v-if="addPlaceBtnClicked" cx="50" cy="50" r="40" stroke="orange" stroke-width="5" fill="blue"></circle>
+    <text v-if="addPlaceBtnClicked" x="50" y="100" stroke="#0000" stroke-width="2px" dy=".3em">P{{numberOfClicks}}</text>
   </svg>
-<p v-if="addPlaceButtonClicked">Add Circle{{numberOfClicks}}</p>
-
-
-    </div>
+</div>
 </template>
 
 <script>
 export default {
   name: "PetriNetMain",
   props: {
-    msg: String,
+    msg: String
   },
   data() {
     return {
-    numberOfClicks: 0,
-    addPlaceButtonClicked: false,
-    }
+      numberOfClicks: 0,
+      addPlaceBtnClicked: false
+    };
   },
   methods: {
     addPlace() {
-      this.addPlaceButtonClicked = true;
+      this.addPlaceBtnClicked = true;
       this.numberOfClicks++;
     }
   }
